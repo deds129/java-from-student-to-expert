@@ -1,11 +1,11 @@
-package OOP;
+/* package OOP;
 
 public class CatDog implements Pet{
 
-    private  Pet cat;
+    private  Cat cat;
     private Pet dog;
 
-    public CatDog(Pet cat, Dog dog) {
+    public CatDog(Cat cat, Dog dog) {
         this.cat = cat;
         this.dog =this.dog;
     }
@@ -18,8 +18,9 @@ this.dog.makeSound();
 
     @Override
     public String getName() {
-
         return  String.format("%s%s", this.cat.getName(),
                 this.dog.getName());
     }
 }
+
+ */

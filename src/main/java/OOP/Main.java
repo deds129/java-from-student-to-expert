@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-		final Clinic clinic=new Clinic(10);
+		final Clinic clinic=new Clinic();
 		System.out.println("=======Welcome to the clinic=======");
 		System.out.println("Please choose your operation:\n" +
 				"[0]-show clients\n" +
@@ -60,10 +60,14 @@ public class Main {
 							clinic.addClient(position, new Client(clientId, new Cat(petName)));
 						} else if ("Dog".equals(petType)) {
 							clinic.addClient(position, new Client(clientId, new Dog(new Animal(petName))));
-						} else if ("CatDog".equals(petType)) {
+						}
+
+						/* else if ("CatDog".equals(petType)) {
 							clinic.addClient(position, new Client(clientId,
 									new CatDog(new Cat(" "),new Dog(new Animal(petName)))));
-						} else {
+						} **/
+
+						else {
 							System.out.println("Error!");
 							break;
 						}

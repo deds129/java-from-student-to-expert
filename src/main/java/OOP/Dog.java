@@ -8,7 +8,7 @@ public class Dog implements Pet{
     public Dog(final Pet pet) {
         this.pet = pet;
     }
-
+//1
     @Override
     public void makeSound() {
         this.pet.makeSound();

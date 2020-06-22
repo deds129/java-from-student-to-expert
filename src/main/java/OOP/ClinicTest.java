@@ -11,7 +11,7 @@ class ClinicTest {
 
     @Test
     void findClientByName() {
-        Clinic clinic = new Clinic(10);
+        Clinic clinic = new Clinic();
         
 
     }
