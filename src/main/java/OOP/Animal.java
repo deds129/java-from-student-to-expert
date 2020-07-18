@@ -1,10 +1,15 @@
 package OOP;
-
+/*
+для дальнейшего расширения
+ */
 public class Animal implements Pet {
     private  String name;
 
     public Animal( String name) {
         this.name = name;
+    }
+
+    public Animal() {
     }
 
     @Override
@@ -15,5 +20,10 @@ public class Animal implements Pet {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public void nameChange(String name) {
+        this.name = name;
     }
 }

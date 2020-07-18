@@ -28,15 +28,15 @@ public class Main {
 				"[6]-exit");
 		BufferedReader reader  = new BufferedReader(new InputStreamReader(System.in));
 		clinic.addClient(0,new Client("empty",new Animal("empty")));
-		clinic.addClient(1,new Client("empty",new Animal("empty")));
-		clinic.addClient(2,new Client("empty",new Animal("empty")));
-		clinic.addClient(3,new Client("empty",new Animal("empty")));
-		clinic.addClient(4,new Client("empty",new Animal("empty")));
-		clinic.addClient(5,new Client("empty",new Animal("empty")));
-		clinic.addClient(6,new Client("empty",new Animal("empty")));
-		clinic.addClient(7,new Client("empty",new Animal("empty")));
-		clinic.addClient(8,new Client("empty",new Animal("empty")));
-		clinic.addClient(9,new Client("empty",new Animal("empty")));
+//		clinic.addClient(1,new Client("empty",new Animal("empty")));
+//		clinic.addClient(2,new Client("empty",new Animal("empty")));
+//		clinic.addClient(3,new Client("empty",new Animal("empty")));
+//		clinic.addClient(4,new Client("empty",new Animal("empty")));
+//		clinic.addClient(5,new Client("empty",new Animal("empty")));
+//		clinic.addClient(6,new Client("empty",new Animal("empty")));
+//		clinic.addClient(7,new Client("empty",new Animal("empty")));
+//		clinic.addClient(8,new Client("empty",new Animal("empty")));
+//		clinic.addClient(9,new Client("empty",new Animal("empty")));
 		String clientId;
 		String petName;
 		String petType;
@@ -57,32 +57,29 @@ public class Main {
 						petName=reader.readLine();
 						petType=reader.readLine();
 						if ("Cat".equals(petType)) {
-							clinic.addClient(position, new Client(clientId, new Cat(petName)));
+							clinic.addClient(position, new Client(clientId, new Cat(new Animal(petName))));
 						} else if ("Dog".equals(petType)) {
 							clinic.addClient(position, new Client(clientId, new Dog(new Animal(petName))));
 						}
-
 						/* else if ("CatDog".equals(petType)) {
 							clinic.addClient(position, new Client(clientId,
 									new CatDog(new Cat(" "),new Dog(new Animal(petName)))));
 						} **/
-
 						else {
 							System.out.println("Error!");
 							break;
 						}
-
 						break;
 					case 2:
 						System.out.println("Please enter Client position");
 						position = Integer.parseInt(reader.readLine());
-						clinic.addClient(position,new Client("empty",new Animal("empty")));
+						clinic.clientDelbyPosition(position);
 						break;
 					case 3:
 
 						System.out.println("Please enter Client position");
 						position = Integer.parseInt(reader.readLine());
-						System.out.println("Please enter Client name");
+						System.out.println("Please enter Clients new name");
 						clientId=reader.readLine();
 						clinic.clientNameChange(position,clientId);
 						break;
@@ -95,7 +92,8 @@ public class Main {
 						System.out.println("Please enter Pet name");
 						petName=reader.readLine();
 						clinic.findClientByPetName(petName);
-
+					case 6:
+						break;
 
 					default:
 						System.out.println("Wrong number of operation!");

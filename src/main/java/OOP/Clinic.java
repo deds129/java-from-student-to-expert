@@ -12,10 +12,10 @@ public class Clinic {
     /*
     список клиентов
      */
-    private  List<Client> clients = new ArrayList<Client>(10);
+    private  List<Client> clients = new ArrayList<Client>();
 
     Clinic() {
-        this.clients=new ArrayList<Client>(10);
+        this.clients=new ArrayList<Client>();
     }
 
     /**
@@ -24,10 +24,12 @@ public class Clinic {
      * @param position Позиция
      * @param client   Клиент
      */
+
+    //добавление клиента
     public void addClient(final int position, final Client client) {
         this.clients.add(position, client);
     }
-
+    //список клиентов
     private final List<Client> findClients=new ArrayList<Client>();
     public List<Client> findClientByName(final String name) {
         //можно подругому
@@ -39,12 +41,13 @@ public class Clinic {
         }
         return findClients;
     }
+    //список клинетов
     public void listOfClients() {
         for (int i=0; i < clients.size(); i++) {
             System.out.println(clients.get(i).getId()+" "+clients.get(i).getClientPetsType()+" "+ clients.get(i).getPetName());
         }
     }
-
+    //поиск клиентов по имени
         public List<Client> findClientByPetName (final String name){
             for (int i=0; i < clients.size(); i++) {
                 if ((clients.get(i).getPetName()).equals(name)) {
@@ -58,23 +61,22 @@ public class Clinic {
             }
             return findClients;
         }
-
-        public void clientNameChange(final int position,String name){
+        //изменение имени клиента
+        public List<Client> clientNameChange(final int position, String name){
             for (int i=0; i < clients.size(); i++) {
                 if (i==position) {
                     clients.get(i).setId(name);
-
                 }
             }
+            return this.clients;
         }
 
-/*
-    public Client[] clientDelbyPosition(final int position) {
-        clients[position].setId("");
-
-        return clients;
+    //удаление клиента
+    public List<Client> clientDelbyPosition(final int position) {
+        clients.remove(position);
+        return this.clients;
         }
-        */
+
  
     }
 

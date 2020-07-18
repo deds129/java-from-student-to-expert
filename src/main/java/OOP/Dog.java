@@ -1,8 +1,6 @@
 package OOP;
 
-import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
-
-public class Dog implements Pet{
+public class Dog extends  Animal{
     private final Pet pet;
 
     public Dog(final Pet pet) {
@@ -18,5 +16,10 @@ public class Dog implements Pet{
     @Override
     public String getName() {
         return this.pet.getName();
+    }
+
+    @Override
+    public void nameChange(String name) {
+        super.nameChange(name);
     }
 }
